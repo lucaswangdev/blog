@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>SpringCloud入门 | LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Spring Cloud什么是Spring Cloud？Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit br">
+<meta name="keywords" content="SpringCloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCloud入门">
+<meta property="og:url" content="http://lucaswangdev.github.io/2020/03/26/Spring Cloud入门/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="Spring Cloud什么是Spring Cloud？Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit br">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7sif0r9rj30d50b4my1.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7uecr9x4j30sa0ae0uz.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7ufw2klrj30s10m040m.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vzq8a5tj30m30dxq75.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vslyn8mj30qg0lh40n.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vs1ujgtj30qx0ljtav.jpg">
+<meta property="og:updated_time" content="2020-03-26T18:37:30.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringCloud入门">
+<meta name="twitter:description" content="Spring Cloud什么是Spring Cloud？Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit br">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00831rSTgy1gd7sif0r9rj30d50b4my1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Spring Cloud入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/03/26/Spring Cloud入门/" class="article-date">
+  <time datetime="2020-03-26T15:32:35.000Z" itemprop="datePublished">2020-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringCloud入门
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Spring-Cloud"><a href="#Spring-Cloud" class="headerlink" title="Spring Cloud"></a>Spring Cloud</h2><h3 id="什么是Spring-Cloud？"><a href="#什么是Spring-Cloud？" class="headerlink" title="什么是Spring Cloud？"></a>什么是Spring Cloud？</h3><p>Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.</p>
+<p>Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用Spring Boot的开发风格做到一键启动和部署。Spring并没有重复制造轮子，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架组合起来，通过Spring Boot风格进行再封装屏蔽掉了复杂的配置和实现原理，最终给开发者留出了一套简单易懂、易部署和易维护的分布式系统开发工具包，是微服务开发的一套完整的解决方案。</p>
+<p><strong>大白话是，Spring Cloud是微服务的大管家</strong>。</p>
+<h4 id="Spring-Cloud五大重要组件"><a href="#Spring-Cloud五大重要组件" class="headerlink" title="Spring Cloud五大重要组件:"></a><strong>Spring Cloud五大重要组件:</strong></h4><ul>
+<li><p>服务发现——Netflflix Eureka</p>
+</li>
+<li><p>客服端负载均衡——Netflflix Ribbon/Feign</p>
+</li>
+<li><p>服务网关——Netflflix Zuul</p>
+</li>
+<li><p>断路器——Netflflix Hystrix</p>
+</li>
+<li><p>分布式配置——Spring Cloud Confifig</p>
+</li>
+</ul>
+<h3 id="什么是微服务？"><a href="#什么是微服务？" class="headerlink" title="什么是微服务？"></a>什么是微服务？</h3><p>这里先引用wiki上的一段定义：</p>
+<blockquote>
+<p><strong>微服务</strong> (Microservices) 是一种软件架构风格，它是以专注于单一责任与功能的小型功能区块 (Small Building Blocks) 为基础，利用模块化的方式组合出复杂的大型应用程序，各功能区块使用与语言无关 (Language-Independent/Language agnostic) 的 API 集相互通信。</p>
+</blockquote>
+<h3 id="为什么需要微服务？"><a href="#为什么需要微服务？" class="headerlink" title="为什么需要微服务？"></a>为什么需要微服务？</h3><p>传统的单体应用，它有着悠久的历史，从Web应用发展的早期一直到今天有着非常多的应用。单体架构无疑是一个成功的架构设计，当你只想做一个小的应用或者Web服务时，它是一个最优的选择，但互联网发展到今天，互联网的体量已经是早期的成千上万倍，用单体架构去服务上千万甚至上亿的用户显然是极度困难的。</p>
+<p><strong>单体架构在现阶段遇到的问题：</strong></p>
+<ol>
+<li>难以横向扩展（伸缩性差），无法根据需要单独提升系统中某一模块的性能。</li>
+<li>系统内部错综复杂难以维护。</li>
+<li>交付效率低，必须以大版本的形式统一交付。</li>
+<li>可靠性差，一小块代码的错误可能导致整个系统宕机。</li>
+<li>无法升级现有技术，系统中牵一发而动全身。<br>当然单体应用也是有它对应的优点，比如易于开发、易于测试、易于部署，但是它的缺点更加的显而易见和不可协调。</li>
+</ol>
+<p><strong>微服务架构相对单体架构的优势：</strong></p>
+<ol>
+<li>可维护性高，每个小组或者开发只需要深入理解自己所负责的模块。</li>
+<li>易于部署，每个服务可以单独进行发布，不会影响整体服务。</li>
+<li>易于横向扩展，可以根据需要单独提升系统中某一模块的性能。</li>
+<li>交付速度快，可维护性高和易于部署解决了交付困难的问题。</li>
+<li>技术升级简单，每个模块可以单独升级框架或语言，互不影响。</li>
+<li>可靠性高，单个服务出现问题不会导致整体系统宕机。<br>以上的优势都是在现代软件开发过程中必不可少的需求，应对互联网现在越来越快的发展速度，小步快跑（减少每次迭代功能、增加迭代次数、减少试错成本）必然成为未来的发展方向，所以采用微服务重构单体架构势在必行。</li>
+</ol>
+<h3 id="为什么需要Spring-Cloud？"><a href="#为什么需要Spring-Cloud？" class="headerlink" title="为什么需要Spring Cloud？"></a>为什么需要Spring Cloud？</h3><p>大白话，需要Spring Cloud来管理这些微服务啊。</p>
+<h3 id="什么是Dubbo"><a href="#什么是Dubbo" class="headerlink" title="什么是Dubbo"></a>什么是Dubbo</h3><p>Dubbo是一个分布式服务框架，致力于提供高性能和透明化的RPC远程服务调用方案，以及SOA服务治理方案。简单的说，dubbo就是个服务框架，如果没有分布式的需求，其实是不需要用的，只有在分布式的时候，才有dubbo这样的分布式服务框架的需求，并且本质上是个服务调用的东东，说白了就是个远程服务调用的分布式框架（告别Web Service模式中的WSdl，以服务者与消费者的方式在dubbo上注册）。其核心部分是远程通讯，集群容错和自动发现等。</p>
+<p>首先，我们来看Spring Cloud和dubbo都支持哪些功能。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7sif0r9rj30d50b4my1.jpg" alt="image-20200327002410735"></p>
+<h2 id="注册中心Eureka"><a href="#注册中心Eureka" class="headerlink" title="注册中心Eureka"></a>注册中心Eureka</h2><h3 id="创建EurekaServer"><a href="#创建EurekaServer" class="headerlink" title="创建EurekaServer"></a>创建EurekaServer</h3><p>先创建一个maven的聚合工程，在父工程中配置springcloud的相关信息，然后再添加一个模块，在模块中创建EurekaServer。</p>
+<ol>
+<li><p>创建聚合工程聚合工程中主要是配置springcloud的版本信息，以及依赖。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.lucas<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud-lucas<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--要依赖的模块--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">module</span>&gt;</span>cloud-eureka<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">spring-cloud.version</span>&gt;</span>Hoxton.SR1<span class="tag">&lt;/<span class="name">spring-cloud.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-dependencies<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring-cloud.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建EurekaServer</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springcloud-lucas<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.lucas<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>cloud-eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    添加依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建启动类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.lucas.eureka;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EurekaApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建配置文件</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7uecr9x4j30sa0ae0uz.jpg" alt="image-20200327012936851"></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用程序名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-eureka</span></span><br><span class="line"><span class="comment">#服务端口号</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8000</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="comment">#是否注册到Eureka，如果是单机版不需要注册到其他Eureka</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">    <span class="comment">#表示是否从Eureka Server获取注册信息，默认为true。</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="comment">#对外提供服务的url</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://127.0.0.1:$&#123;server.port&#125;/eureka/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试</p>
+<p>启动main方法eureka就启动成功了。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7ufw2klrj30s10m040m.jpg" alt="image-20200327013106961"></p>
+</li>
+</ol>
+<h3 id="Eureka集群"><a href="#Eureka集群" class="headerlink" title="Eureka集群"></a>Eureka集群</h3><p>注册中心这么关键的服务，如果是单点话，遇到故障就是毁灭性的。在一个分布式系统中，服务注册中</p>
+<p>心是最重要的基础部分，理应随时处于可以提供服务的状态。为了维持其可用性，使用集群是很好的解</p>
+<p>决方案。Eureka通过互相注册的方式来实现高可用的部署，所以我们只需要将Eureke Server配置其他</p>
+<p>可用的serviceUrl就能实现高可用部署。</p>
+<p>在生产中我们可能需要三台或者大于三台的注册中心来保证服务的稳定性，配置的原理就是将注册中心</p>
+<p>分别指向其它的注册中心。每台注册中心分别又指向其它两个节点即可，使用application.yml来配置。</p>
+<p>application-8001.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用程序名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-eureka</span></span><br><span class="line"><span class="comment">#服务端口号</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8001</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">eureka8001</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="comment">#是否注册到Eureka，如果是单机版不需要注册到其他Eureka</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment">#表示是否从Eureka Server获取注册信息，默认为true。</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="comment">#对外提供服务的url</span></span><br><span class="line">    <span class="attr">defaultZone:</span> <span class="string">http://eureka8002:8002/eureka/,http://eureka8003:8003/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>application-8002.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用程序名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-eureka</span></span><br><span class="line"><span class="comment">#服务端口号</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8002</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">eureka8002</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="comment">#是否注册到Eureka，如果是单机版不需要注册到其他Eureka</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment">#表示是否从Eureka Server获取注册信息，默认为true。</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="comment">#对外提供服务的url</span></span><br><span class="line">    <span class="attr">defaultZone:</span> <span class="string">http://eureka8001:8001/eureka/,http://eureka8003:8003/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>application-8003.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#应用程序名称</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">cloud-eureka</span></span><br><span class="line"><span class="comment">#服务端口号</span></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8003</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">eureka8003</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="comment">#是否注册到Eureka，如果是单机版不需要注册到其他Eureka</span></span><br><span class="line">    <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment">#表示是否从Eureka Server获取注册信息，默认为true。</span></span><br><span class="line">    <span class="attr">fetch-registry:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">service-url:</span></span><br><span class="line">      <span class="comment">#对外提供服务的url</span></span><br><span class="line">    <span class="attr">defaultZone:</span> <span class="string">http://eureka8001:8001/eureka/,http://eureka8002:8002/eureka/</span></span><br></pre></td></tr></table></figure>
+<p>以上的配置中配置了 hostname 属性，需要在hosts文件中配置host名称和ip的映射关系：</p>
+<p>修改本机的host文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Eureka </span><br><span class="line">127.0.0.1 eureka8001 </span><br><span class="line">127.0.0.1 eureka8002 </span><br><span class="line">127.0.0.1 eureka8003</span><br></pre></td></tr></table></figure>
+<p>创建三个配置文件，在启动参数中配置使用的配置文件名称，启动三个实例就可以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// EurekaApplication-8001：</span><br><span class="line">--spring.profiles.active=8001</span><br><span class="line"></span><br><span class="line">// EurekaApplication-8002：</span><br><span class="line">--spring.profiles.active=8002</span><br><span class="line"></span><br><span class="line">// EurekaApplication-8003：</span><br><span class="line">--spring.profiles.active=8003</span><br></pre></td></tr></table></figure>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vzq8a5tj30m30dxq75.jpg" alt="image-20200327022444371"></p>
+<p>分别启动程序：</p>
+<p>EurekaApplication-8001</p>
+<p>EurekaApplication-8002</p>
+<p>EurekaApplication-8003</p>
+<p><strong>浏览器中查看：</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vslyn8mj30qg0lh40n.jpg" alt="image-20200327021754968"></p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7vs1ujgtj30qx0ljtav.jpg" alt="image-20200327021723327"></p>
+<p><strong>集群配置注意事项</strong></p>
+<p>如果配置了Eureka集群节点出现在unavailable-replicas下，说明备份节点是不可用的，出现这个问题</p>
+<p>的几种原因如下：</p>
+<ol>
+<li>eureka.client.serviceUrl.defaultZone 配置项的地址，不能使用localhost，要使用域名，</li>
+</ol>
+<p>DNS解析请自行配置。本地可以修改hosts文件来实现。</p>
+<ol start="2">
+<li><p>spring.application.name 属性集群中的每个节点要一致。</p>
+</li>
+<li><p>如下两个参数需配为true</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">client:</span></span><br><span class="line">  <span class="attr">register-with-eureka:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">fetch-registry:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置 eureka.instance.hostname 属性，设置域名信息</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">eureka8003</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果配置了 eureka.instance.prefer-ip-address 属性，应该设置成 false ，或者去掉此参</p>
+<p>数，默认就是false。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">eureka:</span> </span><br><span class="line">	<span class="attr">instance:</span> </span><br><span class="line">		<span class="attr">prefer-ip-address:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看端口是否被占用了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Mac系统</span><br><span class="line">1.查看端口</span><br><span class="line">终端输入：lsof -i tcp:port 将port换成被占用的端口(如：80)</span><br><span class="line">将会出现占用端口的进程信息。</span><br><span class="line"></span><br><span class="line">2.kill进程</span><br><span class="line">找到进程的PID,使用kill命令：kill PID（进程的PID，如2044），杀死对应的进程</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2020/03/26/Spring Cloud入门/" data-id="ckbh8837x002duy5onvbws9v2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/03/Java概述-B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java概述(B1)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/19/SpringBoot入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SpringBoot入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

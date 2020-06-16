@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>数组-B4 | LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Java - 数组数组数组概述数组是最常见的一种数据结构，主要用来存储多个数据，数组中有多个元素可存放数据，然后可以通过元素索引来访问&amp;amp;操作数组元素。 数组中的所有数组元素的数据类型要求要一致。 当数组初始化完成后，在内存中所占的空间也会固定下来，所以长度不能再改变。哪怕数组中没有数据，长度也是不会变的。 数组也是一种数据类型，它本身也是引用类型。int 是基本数据类型，数组int[] 则">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组-B4">
+<meta property="og:url" content="http://lucaswangdev.github.io/2020/04/19/数组-B4/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="Java - 数组数组数组概述数组是最常见的一种数据结构，主要用来存储多个数据，数组中有多个元素可存放数据，然后可以通过元素索引来访问&amp;amp;操作数组元素。 数组中的所有数组元素的数据类型要求要一致。 当数组初始化完成后，在内存中所占的空间也会固定下来，所以长度不能再改变。哪怕数组中没有数据，长度也是不会变的。 数组也是一种数据类型，它本身也是引用类型。int 是基本数据类型，数组int[] 则">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gdzk82nz0ej30lz08rwfm.jpg">
+<meta property="og:updated_time" content="2020-04-19T17:31:54.023Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组-B4">
+<meta name="twitter:description" content="Java - 数组数组数组概述数组是最常见的一种数据结构，主要用来存储多个数据，数组中有多个元素可存放数据，然后可以通过元素索引来访问&amp;amp;操作数组元素。 数组中的所有数组元素的数据类型要求要一致。 当数组初始化完成后，在内存中所占的空间也会固定下来，所以长度不能再改变。哪怕数组中没有数据，长度也是不会变的。 数组也是一种数据类型，它本身也是引用类型。int 是基本数据类型，数组int[] 则">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gdzk82nz0ej30lz08rwfm.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数组-B4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/19/数组-B4/" class="article-date">
+  <time datetime="2020-04-19T15:26:09.000Z" itemprop="datePublished">2020-04-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组-B4
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Java-数组"><a href="#Java-数组" class="headerlink" title="Java - 数组"></a>Java - 数组</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组概述"><a href="#数组概述" class="headerlink" title="数组概述"></a>数组概述</h3><p>数组是最常见的一种数据结构，主要用来存储多个数据，数组中有多个元素可存放数据，然后可以通过元素索引来访问&amp;操作数组元素。</p>
+<p>数组中的所有数组元素的数据类型要求要一致。</p>
+<p>当数组初始化完成后，在内存中所占的空间也会固定下来，所以长度不能再改变。哪怕数组中没有数据，长度也是不会变的。</p>
+<p>数组也是一种数据类型，它本身也是引用类型。int 是基本数据类型，数组int[] 则是一种引用类型。</p>
+<h3 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h3><p>语法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数组类型[] 数组变量名; <span class="comment">// 建议使用这种，可读性强 </span></span><br><span class="line">数组类型 数组变量名[];</span><br></pre></td></tr></table></figure>
+<p>数组是一种引用类型的变量，因此使用他定义一个变量时，仅仅表示定义了一个变量（也就是定义了一个指针），这个引用变量还未指向任何有效的内存，因此定义数组时不能指定数组的长度。</p>
+<p>数组的特点：</p>
+<ul>
+<li><p>数组是一种引用数据类型 </p>
+</li>
+<li><p>数组当中的多个数据，类型必须统一 </p>
+</li>
+<li><p>数组的长度在程序运行期间不可改变</p>
+</li>
+</ul>
+<h3 id="初始化数组"><a href="#初始化数组" class="headerlink" title="初始化数组"></a>初始化数组</h3><p>初始化有两种方式：<strong>静态初始化</strong>和<strong>动态初始化</strong>。</p>
+<p>数组初始化后，才能为数组元素分配内存空间，并为每个数组元素赋初始化值，接着才能使用。</p>
+<h4 id="静态初始化"><a href="#静态初始化" class="headerlink" title="静态初始化"></a>静态初始化</h4><p>初始化时，由开发者显示指定每个数组元素的初始值，由系统决定数组长度。<br>语法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型[] 数组变量名 = <span class="keyword">new</span> 数组类型[]&#123;元素<span class="number">1</span>,元素<span class="number">2</span>,...,元 素N&#125;;</span><br></pre></td></tr></table></figure>
+<p>注意：在指定的数组元素值的类型必须与 new 关键字后数组类型 一致，或者是其子类的实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义整型数组</span></span><br><span class="line"><span class="keyword">int</span>[] nums;</span><br><span class="line"><span class="comment">// 初始化数组</span></span><br><span class="line">nums = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>&#125;;</span><br><span class="line"><span class="comment">// 定义字符串数组</span></span><br><span class="line">String[] strs;</span><br><span class="line"><span class="comment">// 初始化数组</span></span><br><span class="line">strs = <span class="keyword">new</span> String[]&#123;<span class="string">"James"</span>, <span class="string">"JiaJia"</span>&#125;;</span><br><span class="line"><span class="comment">// 简化写法</span></span><br><span class="line">String[] strs2 = &#123;<span class="string">"张三"</span>, <span class="string">"李四"</span>&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="动态初始化"><a href="#动态初始化" class="headerlink" title="动态初始化"></a>动态初始化</h4><p>语法格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型[] 数组名 = <span class="keyword">new</span> 数组类型[数组长度];</span><br></pre></td></tr></table></figure>
+<p><strong>具体解释</strong></p>
+<ul>
+<li><p>左侧数据类型：也就是数组当中保存的数据，全都是统一的类型</p>
+</li>
+<li><p>左侧的中括号：代表是一个数组</p>
+</li>
+<li><p>左侧数组名称：给数组取一个名字</p>
+</li>
+<li><p>右侧的 new：代表创建数组的动作</p>
+</li>
+<li><p>右侧数据类型：必须和左边的数据类型保持一致</p>
+</li>
+<li><p>右侧中括号的长度：也就是数组当中，到底可以保存多少个数据，是一个int数字</p>
+</li>
+</ul>
+<p>初始化时，开发者指定数组长度，系统会自动为数组元素分配初始值。分配初始值的时候，需要注意数据类型，分别是：</p>
+<ul>
+<li>整型：byte、short、int 和 long，则默认值是 0。 </li>
+<li>浮点型：float、double，则默认值是 0.0。</li>
+<li>字符型：char，则默认值是 ‘\u0000’。 </li>
+<li>布尔类型：boolean，则默认值是 false。 </li>
+<li>引用类型：类、接口和数组，则默认值是 null。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态初始化的时候，数组的定义和初始化同时完成 </span></span><br><span class="line"><span class="keyword">int</span>[] nums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>]; </span><br><span class="line"><span class="comment">// 创建一个数组，能存放 10 个 double 类型的数据 </span></span><br><span class="line"><span class="keyword">double</span>[] arrayB = <span class="keyword">new</span> <span class="keyword">double</span>[<span class="number">10</span>]; </span><br><span class="line"><span class="comment">// 创建一个数组，能存放 20 个字符串 </span></span><br><span class="line">String[] strs = <span class="keyword">new</span> String[<span class="number">20</span>]; </span><br><span class="line"><span class="comment">// 初始化数据的元素类型是定义数组时元素类型的子类 </span></span><br><span class="line">Object[] objs = <span class="keyword">new</span> String[<span class="number">30</span>];</span><br></pre></td></tr></table></figure>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
+<li><p>动态初始化（指定长度）：在创建数组的时候，直接指定数组当中的数据元素个数。</p>
+</li>
+<li><p>静态初始化（指定内容）：在创建数组的时候，不直接指定数据个数多少，而是直接将具体的数据内容进行指定。</p>
+</li>
+</ul>
+<p>注意：虽然静态初始化没有直接告诉长度，但是根据大括号里面的元素具体内容，也可以自动推算出来长度。</p>
+<h4 id="直接打印数组"><a href="#直接打印数组" class="headerlink" title="直接打印数组"></a>直接打印数组</h4><p>直接打印数组名称，得到的是数组对应的：内存地址哈希值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] strs2 = &#123;<span class="string">"张三"</span>, <span class="string">"李四"</span>&#125;;</span><br><span class="line">System.out.println(strs2); <span class="comment">// [Ljava.lang.String;@61bbe9ba</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用数组"><a href="#使用数组" class="headerlink" title="使用数组"></a>使用数组</h2><p>平时使用数组，就是根据数据元素的索引值来进行赋值和取出数组元素的值。</p>
+<p>索引值：就是一个 int 数字，代表数组当中元素的编号。</p>
+<p>数组索引是从 0 开始的，第一个元素的索引值是 0，最后一个元素的索引值是(数组长度 - 1)。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态初始化的省略格式 </span></span><br><span class="line"><span class="keyword">int</span>[] array = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;; </span><br><span class="line">System.out.println(array); </span><br><span class="line"><span class="comment">// 直接打印数组当中的元素 </span></span><br><span class="line">System.out.println(array[<span class="number">0</span>]); <span class="comment">// 10 </span></span><br><span class="line">System.out.println(array[<span class="number">1</span>]); <span class="comment">// 20 </span></span><br><span class="line">System.out.println(array[<span class="number">2</span>]); <span class="comment">// 30 </span></span><br><span class="line"><span class="comment">// 也可以将数组当中的某一个单个元素，赋值交给变量 </span></span><br><span class="line"><span class="keyword">int</span>[] num = &#123;arr[<span class="number">2</span>], <span class="number">88</span>, <span class="number">99</span>&#125;; </span><br><span class="line">System.out.println(num);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 动态初始化</span></span><br><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">array[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line">array[<span class="number">1</span>] = <span class="number">20</span>;</span><br><span class="line">array[<span class="number">2</span>] = <span class="number">30</span>;</span><br><span class="line">System.out.println(array[<span class="number">0</span>]);</span><br><span class="line">System.out.println(array[<span class="number">1</span>]);</span><br><span class="line">System.out.println(array[<span class="number">2</span>]);</span><br></pre></td></tr></table></figure>
+<h3 id="for-循环获取数组元素"><a href="#for-循环获取数组元素" class="headerlink" title="for 循环获取数组元素"></a>for 循环获取数组元素</h3><p>如果要获取数组的长度，可以使用 length 属性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="comment">// 输出 nums 数组中所有的数字</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">    System.out.println(<span class="string">"第"</span> + i + <span class="string">"个元素："</span> + nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="foreach-循环获取数组元素"><a href="#foreach-循环获取数组元素" class="headerlink" title="foreach 循环获取数组元素"></a>foreach 循环获取数组元素</h3><p>这是一个更加简洁的 for 循环方式，在遍历数组或集合元素的时候，不用获取数组或集合的长度，也不用根据索引来访问数组元素或集合元素。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(数据类型 变量名 : 数组变量名 | 集合变量名)&#123; </span><br><span class="line">    <span class="comment">// 访问操作 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 遍历数组，获取所有数值 </span></span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> num : nums )&#123; </span><br><span class="line">    System.out.println(<span class="string">"获取到的数值是："</span> + num); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> num: nums) &#123;</span><br><span class="line">    System.out.println(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="数组进阶"><a href="#数组进阶" class="headerlink" title="数组进阶"></a>数组进阶</h3><h4 id="内存中数组"><a href="#内存中数组" class="headerlink" title="内存中数组"></a>内存中数组</h4><p>数组是引用类型数据，数组引用变量只是一个引用，可以指向任何有效的内存，才能访问到对应的数组元素。</p>
+<p>数组元素和数组变量在内存中是分开存放的，分别在堆内存和栈内存中，</p>
+<p>如图：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gdzk82nz0ej30lz08rwfm.jpg" alt="image-20200420005122637"></p>
+<p><strong>拓展：堆内存和栈内存</strong> </p>
+<p>当一个方法执行时，每个方法都会建立自己的内存栈，在这个方法内定义的变量将会逐个放入这块栈内存里，随着方法的执行结束，这个方法的内存栈也将会自然销毁。 </p>
+<p> 因此，所有在方法中定义的局部变量都是放在占内存中的，在程序中创建一个对象时，这个对象将被保存到运行时数据区中，以便反复利用 （因为对象的创建成本通常较大），这个运行时数据区就是堆内存。 </p>
+<p>堆内存中的对象不会随方法的结束而销毁，即使方法结束后，这个对象 还可能被另一个引用变量所引用（在方法的参数传递时很常见），则这 个对象依然不会被销毁。只有当一个对象没有任何引用变量引用它时， 系统的垃圾回收器才会在合适的时候回收它。</p>
+<p>如果堆内存中数组不再有任何引用变量指向自己（也就是红色那个线没有了），则这个数组将成为垃圾，该数组所占的内存将被系统的垃圾回收器回收。</p>
+<p>如果你想手动让垃圾回收器回收一个数组所占的内存空间，可以将该数组变量赋为 null，相当于把上面那根红色的线切断了。</p>
+<h4 id="简单数组的初始化过程"><a href="#简单数组的初始化过程" class="headerlink" title="简单数组的初始化过程"></a>简单数组的初始化过程</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组 </span></span><br><span class="line"><span class="keyword">int</span>[] nums; </span><br><span class="line"><span class="comment">// 初始化数组，指定长度 </span></span><br><span class="line">nums = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>]; </span><br><span class="line"><span class="comment">// 赋值 </span></span><br><span class="line">nums = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"><span class="comment">// 动态初始化</span></span><br><span class="line">System.out.println(array); <span class="comment">// [I@61bbe9ba</span></span><br><span class="line"><span class="comment">// 地址值</span></span><br><span class="line">System.out.println(array[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line">System.out.println(array[<span class="number">1</span>]); <span class="comment">// 0</span></span><br><span class="line">System.out.println(array[<span class="number">2</span>]); <span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 改变数组当中元素的内容</span></span><br><span class="line">array[<span class="number">1</span>] = <span class="number">10</span>;</span><br><span class="line">array[<span class="number">2</span>] = <span class="number">20</span>;</span><br><span class="line">System.out.println(array); <span class="comment">// [I@61bbe9ba</span></span><br><span class="line"><span class="comment">// 地址值</span></span><br><span class="line">System.out.println(array[<span class="number">0</span>]); <span class="comment">// 0</span></span><br><span class="line">System.out.println(array[<span class="number">1</span>]); <span class="comment">// 10</span></span><br><span class="line">System.out.println(array[<span class="number">2</span>]); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+<h4 id="数组越界"><a href="#数组越界" class="headerlink" title="数组越界"></a>数组越界</h4><p>【特重要】如果访问数组元素时指定的索引值小于 0，或者大于等于数组的长度，编译程序不会出现任何错误，但运行时会出现异常：java.lang.ArrayIndexOutOfBoundsException:N（数组索引越界异常），异常信息后的 N 就是开发者原本试图访问的数组索。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array = &#123;<span class="number">15</span>, <span class="number">25</span>, <span class="number">35</span>&#125;;</span><br><span class="line">System.out.println(array[<span class="number">0</span>]); <span class="comment">//15</span></span><br><span class="line">System.out.println(array[<span class="number">1</span>]); <span class="comment">// 25</span></span><br><span class="line">System.out.println(array[<span class="number">2</span>]); <span class="comment">// 35</span></span><br><span class="line"><span class="comment">// 错误写法</span></span><br><span class="line"><span class="comment">// 并不存在3号元素，所以发生异常</span></span><br><span class="line"><span class="comment">// java.lang.ArrayIndexOutOfBoundsException</span></span><br><span class="line">System.out.println(array[<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+<p>所有的引用类型变量，都可以赋值为一个 null 值，它代表里面什么都没有。</p>
+<p>数组必须通过 new 进行初始化才能使用其中的元素。但如果只是赋值了一个null，没有进行new创建，那么还会发生：空指针异常NullPointerException。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] array = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">// 使用new 初始化之后就好了</span></span><br><span class="line">    array = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">    System.out.println(array[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组长度的变化"><a href="#数组长度的变化" class="headerlink" title="数组长度的变化"></a>数组长度的变化</h4><p>获取数组的长度：数组名称.length</p>
+<p><strong>注意：</strong>数组一旦创建，程序运行期间，长度不可改变。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] arrayB = &#123;<span class="number">166</span>, <span class="number">20</span>, <span class="number">220</span>, <span class="number">344</span>, <span class="number">35</span>, <span class="number">24</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">13</span>, <span class="number">15</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">47</span>, <span class="number">8</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> len = arrayB.length;</span><br><span class="line">    System.out.println(<span class="string">"arrayB 数组的长度是："</span> + len);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[] arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">    System.out.println(arrayC.length); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line">    arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">    System.out.println(arrayC.length); <span class="comment">// 5</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数组最大值-amp-最小值"><a href="#数组最大值-amp-最小值" class="headerlink" title="数组最大值&amp;最小值"></a>数组最大值&amp;最小值</h4><h2 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h2><h2 id="Arrays-工具类"><a href="#Arrays-工具类" class="headerlink" title="Arrays 工具类"></a>Arrays 工具类</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2020/04/19/数组-B4/" data-id="ckbh8837z002euy5o4o1sm197" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/20/面向对象-B5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          面向对象-B5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/18/流程控制-B3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">流程控制-B3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

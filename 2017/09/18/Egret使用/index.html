@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Egret使用 | LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本指令基本指令egret create game   //创建项目(创建一个名为game的项目)    egret build game   //编译项目(编译成js代码)  egret startserver game  //运行项目(运行项目服务)  egret upgrade   //升级引擎（先安装好要升级的版本，然后升级）egret build -e  //升级之后  Example3">
+<meta name="keywords" content="Egret">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Egret使用">
+<meta property="og:url" content="http://lucaswangdev.github.io/2017/09/18/Egret使用/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="基本指令基本指令egret create game   //创建项目(创建一个名为game的项目)    egret build game   //编译项目(编译成js代码)  egret startserver game  //运行项目(运行项目服务)  egret upgrade   //升级引擎（先安装好要升级的版本，然后升级）egret build -e  //升级之后  Example3">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-23T02:08:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Egret使用">
+<meta name="twitter:description" content="基本指令基本指令egret create game   //创建项目(创建一个名为game的项目)    egret build game   //编译项目(编译成js代码)  egret startserver game  //运行项目(运行项目服务)  egret upgrade   //升级引擎（先安装好要升级的版本，然后升级）egret build -e  //升级之后  Example3">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Egret使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/09/18/Egret使用/" class="article-date">
+  <time datetime="2017-09-18T12:15:58.000Z" itemprop="datePublished">2017-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Egret使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本指令"><a href="#基本指令" class="headerlink" title="基本指令"></a>基本指令</h1><h2 id="基本指令-1"><a href="#基本指令-1" class="headerlink" title="基本指令"></a>基本指令</h2><p>egret create game   //创建项目(创建一个名为game的项目)   </p>
+<p>egret build game   //编译项目(编译成js代码) </p>
+<p>egret startserver game  //运行项目(运行项目服务) </p>
+<p>egret upgrade   //升级引擎（先安装好要升级的版本，然后升级）<br>egret build -e  //升级之后</p>
+<hr>
+<h3 id="Example3"><a href="#Example3" class="headerlink" title="Example3:"></a>Example3:</h3><p>Main.ts文件，代码如下：</p>
+<pre><code>class Main extends egret.DisplayObjectContainer {
+    public constructor() {
+    super();
+    console.log(&apos;这是最新编辑的文档22222！！！&apos;);
+    var spr:egret.Sprite = new egret.Sprite();
+    spr.graphics.lineStyle(5,0xff0000);
+    spr.graphics.beginFill(0xffffff);
+    spr.graphics.drawRect(0, 0, 100, 100);
+    spr.graphics.endFill();
+    this.addChild(spr); 
+    }
+}
+</code></pre><h3 id="Example4"><a href="#Example4" class="headerlink" title="Example4:"></a>Example4:</h3><ol>
+<li>新建Rect.ts文件，让Rect类继承 egret.Sprite</li>
+<li>定义一个包含四个颜色的数组。</li>
+<li>根据Rect不同的属性显示不同的颜色。</li>
+</ol>
+<h3 id="Example5"><a href="#Example5" class="headerlink" title="Example5:"></a>Example5:</h3><p>通过一个新的类来实现方块宽高值的计算</p>
+<h3 id="复杂是事情拆分成简单的事情，然后去逐个解决，解决问题的思想。"><a href="#复杂是事情拆分成简单的事情，然后去逐个解决，解决问题的思想。" class="headerlink" title="复杂是事情拆分成简单的事情，然后去逐个解决，解决问题的思想。"></a>复杂是事情拆分成简单的事情，然后去逐个解决，解决问题的思想。</h3><h3 id="Example6"><a href="#Example6" class="headerlink" title="Example6:"></a>Example6:</h3><p>已经制作好了带有逻辑的小方块，那么在游戏中，每一行的小方块直接互相带有逻辑。这里我们将每一行的方块设定为一个组，让游戏中的方块都以组为单位进行计算。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2017/09/18/Egret使用/" data-id="ckbh8834l0002uy5o0kckecnz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Egret/">Egret</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/24/TypeScript笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          TypeScript笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/16/ECMAScript6入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ECMAScript6入门</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

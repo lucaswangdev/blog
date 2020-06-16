@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="写下你的小目标，把它加入任务队列">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LucasWang&#39;s Notes">
+<meta property="og:url" content="http://lucaswangdev.github.io/page/2/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="写下你的小目标，把它加入任务队列">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LucasWang&#39;s Notes">
+<meta name="twitter:description" content="写下你的小目标，把它加入任务队列">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Maven的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/17/Maven的使用/" class="article-date">
+  <time datetime="2020-02-17T10:13:39.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/17/Maven的使用/">Maven的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h2 id="Maven概述"><a href="#Maven概述" class="headerlink" title="Maven概述"></a>Maven概述</h2><p>什么是Maven？ </p>
+<p>Maven 的正确发音是[ˈmevən]， 在美国是 一个口语化的词语，代表专家、内行的意思。<br>Maven 是一个项目管理工具，它包含了一个项目对象模型 (POM：Project Object Model)，一组标准集合，一个项目生命周 期(Project Lifecycle)，一个依赖管理系统 (Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插 件(plugin)目标(goal)的逻辑。</p>
+<h2 id="Maven核⼼应⽤"><a href="#Maven核⼼应⽤" class="headerlink" title="Maven核⼼应⽤"></a>Maven核⼼应⽤</h2><p><strong>Maven的依赖管理</strong></p>
+<p>传统的 WEB 项目中，我们必须将工程所依赖的 jar 包复制到工程中，导致了工程的变得很大。 </p>
+<p>Maven可以不直接将 jar 包导入到工程中，而是通过在 pom.xml 文件中添加所需 的jar描述。再通</p>
+<p>过 pom.xml 文件中的坐标，到一个专门用于” 存放 jar 包的仓库”(maven 仓库)中根据坐标从而找</p>
+<p>到这 些 jar 包并运行。 </p>
+<p><strong>Maven的项目构建</strong></p>
+<p>项目的构建包括：编译、测试、运行、打包、安装 ，部署等步骤，这些都可以交给Maven来进行管 </p>
+<p>理。</p>
+<h2 id="Maven的安装"><a href="#Maven的安装" class="headerlink" title="Maven的安装"></a>Maven的安装</h2><p><strong>1、下载</strong>：</p>
+<p>在Maven官网(<a href="https://maven.apache.org)可以下载Maven软件，目前最新版本为3.6.3。点击apache" target="_blank" rel="noopener">https://maven.apache.org)可以下载Maven软件，目前最新版本为3.6.3。点击apache</a></p>
+<p>maven-3.6.3-bin.zip可以下载。</p>
+<p><strong>2、配置到环境变量</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line"></span><br><span class="line"># 添加Maven到环境变量</span><br><span class="line">export M2_HOME=/Library/apache-maven-3.6.3</span><br><span class="line">export PATH=$M2_HOME/bin:$PATH</span><br><span class="line"></span><br><span class="line">使最新的环境变量生效:</span><br><span class="line">source ~/.bash_profile</span><br><span class="line"></span><br><span class="line">测试Maven 是否安装成功:</span><br><span class="line">echo $M2_HOME</span><br><span class="line">echo $PATH</span><br><span class="line"></span><br><span class="line">mvn -version</span><br><span class="line">成功时，输出的日志如下：</span><br><span class="line">Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)</span><br><span class="line">Maven home: /Library/apache-maven-3.6.3</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<h2 id="Maven常⽤命令"><a href="#Maven常⽤命令" class="headerlink" title="Maven常⽤命令"></a>Maven常⽤命令</h2><p>我们可以在 cmd 中通过 maven 命令来对我们的 maven 工程进行编译、测试、运行、打包、安装、部署。 </p>
+<ul>
+<li><p>compile是 maven 工程的编译命令，作用是将 src/main/java 下的文件编译为 class 文件输出到 target目录下。</p>
+</li>
+<li><p>test 是 maven 工程的测试命令 mvn test，会执行 src/test/java 下的单元测试类。</p>
+</li>
+<li><p>clean 是 maven 工程的清理命令，执行 clean 会删除 target 目录及内容。</p>
+</li>
+<li><p>package 是 maven 工程的打包命令，对于 java 工程执行 package 打成 jar 包，对于 web 工程打成 war包。</p>
+</li>
+<li><p>install 是 maven 工程的安装命令，执行 install 将 maven 打成 jar 包或 war 包发布到本地仓库。</p>
+</li>
+</ul>
+<h2 id="Maven仓库源的配置"><a href="#Maven仓库源的配置" class="headerlink" title="Maven仓库源的配置"></a>Maven仓库源的配置</h2><p>maven中央仓库的源在国外，加载jar包比较慢，可以配置仓库的源来解决。</p>
+<p>1、默认本地仓库位置.m2下面添加”/settings.xml “文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">默认本地仓库位置在 $&#123;user.dir&#125;/.m2/repository，$&#123;user.dir&#125;表示 用户目录。 </span><br><span class="line">/Users/lucas/.m2</span><br></pre></td></tr></table></figure>
+<p>settings.xml文件内容：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0</span></span></span><br><span class="line"><span class="tag"><span class="string">                          https://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>alimaven<span class="tag">&lt;/<span class="name">id</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>aliyun maven<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span>          </span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="IDEA开发Maven配置"><a href="#IDEA开发Maven配置" class="headerlink" title="IDEA开发Maven配置"></a>IDEA开发Maven配置</h2><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbztqvth6sj31800u0dly.jpg" alt></p>
+<h2 id="Maven添加依赖包"><a href="#Maven添加依赖包" class="headerlink" title="Maven添加依赖包"></a>Maven添加依赖包</h2><p>在pom.xml文件中配置如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  	<span class="comment">&lt;!-- 依赖包 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.alibaba/fastjson --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.62<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Maven项目的启动"><a href="#Maven项目的启动" class="headerlink" title="Maven项目的启动"></a>Maven项目的启动</h2><ul>
+<li>IDEA传统Tomcat的启动方式</li>
+<li>Tomcat插件的启动形式</li>
+</ul>
+<p><strong>Tomcat插件的启动形式</strong></p>
+<p>1、在pom.xml添加tomcat插件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">					<span class="comment">&lt;!-- 端口号 --&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">port</span>&gt;</span>8888<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2、新建maven插件启动的配置<img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbzu3tp49ej310f0u0di1.jpg" alt></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbzu63jwozj31j40u041y.jpg" alt></p>
+<h2 id="IDEA新建webapp项目"><a href="#IDEA新建webapp项目" class="headerlink" title="IDEA新建webapp项目"></a>IDEA新建webapp项目</h2><p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbzv5az3hcj31l70u07cm.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2020/02/17/Maven的使用/" data-id="ckbh88354000buy5od5dzlivk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Tomcat的使⽤" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/17/Tomcat的使⽤/" class="article-date">
+  <time datetime="2020-02-17T09:49:33.000Z" itemprop="datePublished">2020-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/17/Tomcat的使⽤/">Tomcat的使⽤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>1、官⽹地址:<a href="http://tomcat.apache.org下载。" target="_blank" rel="noopener">http://tomcat.apache.org下载。</a></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gbzjsshlrrj311y0sqgqa.jpg" alt></p>
+<p>2、解压文件，并放到指定路径，给该文件授权。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 755</span><br></pre></td></tr></table></figure>
+<p>3、启动和停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">进入到/Users/lucas/Downloads/apache-tomcat-9.0.31/bin目录下：</span><br><span class="line">启动： sudo ./startup.sh</span><br><span class="line">http://localhost:8080</span><br><span class="line"></span><br><span class="line">停止：./shutdown.sh</span><br></pre></td></tr></table></figure>
+<h2 id="Tomcat部署Java项目的3种方式："><a href="#Tomcat部署Java项目的3种方式：" class="headerlink" title="Tomcat部署Java项目的3种方式："></a>Tomcat部署Java项目的3种方式：</h2><ul>
+<li>部署方式1：</li>
+</ul>
+<p>生成war包=&gt;webapps =&gt;执行tomcat</p>
+<p>idea打包成war</p>
+<p><a href="https://blog.csdn.net/lhp3000/article/details/78994010" target="_blank" rel="noopener">https://blog.csdn.net/lhp3000/article/details/78994010</a></p>
+<ul>
+<li>部署方式2：</li>
+</ul>
+<p>1、在Tomcat下，找到conf文件下的server.xml</p>
+<p>2、在<host>和</host>之间架设如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;目标目录位置&quot; path=&quot;/虚拟路径名&quot; reloadable=&quot;true&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;Context docBase=&quot;/Users/lucaswang/worktest1&quot; path=&quot;/test&quot; reloadable=&quot;true&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>部署方式3：</li>
+</ul>
+<p>直接把要部署的文件放在webapp文件夹下面</p>
+<h2 id="Eclipse与IDEA配置tomcat"><a href="#Eclipse与IDEA配置tomcat" class="headerlink" title="Eclipse与IDEA配置tomcat"></a>Eclipse与IDEA配置tomcat</h2><p><a href="https://www.cnblogs.com/yangyuanhu/p/11983059.html" target="_blank" rel="noopener">https://www.cnblogs.com/yangyuanhu/p/11983059.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2020/02/17/Tomcat的使⽤/" data-id="ckbh8835k000kuy5owuscpswy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python基础语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/19/Python基础语法/" class="article-date">
+  <time datetime="2019-07-19T04:54:16.000Z" itemprop="datePublished">2019-07-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/19/Python基础语法/">Python基础语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="第0关-print-函数与变量"><a href="#第0关-print-函数与变量" class="headerlink" title="第0关  print()函数与变量"></a>第0关  print()函数与变量</h3><h3 id="第1关-数据类型与转换"><a href="#第1关-数据类型与转换" class="headerlink" title="第1关  数据类型与转换"></a>第1关  数据类型与转换</h3><h3 id="第2关-条件判断与条件嵌套"><a href="#第2关-条件判断与条件嵌套" class="headerlink" title="第2关  条件判断与条件嵌套"></a>第2关  条件判断与条件嵌套</h3><ul>
+<li>条件判断的三种形式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">单向判断：if</span><br><span class="line">双向判判断：if...else</span><br><span class="line">多向判判断：if...elif ...else</span><br><span class="line"></span><br><span class="line">#条件</span><br><span class="line">if xxxx:</span><br><span class="line">	#做点什么</span><br><span class="line">	print(xxxx)</span><br><span class="line">命令逻辑：如果...就...</span><br><span class="line">命令格式：if条件后面跟英文冒号，回车后自动缩进</span><br></pre></td></tr></table></figure>
+<h3 id="第3关-input-函数"><a href="#第3关-input-函数" class="headerlink" title="第3关  input()函数"></a>第3关  input()函数</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/07/19/Python基础语法/" data-id="ckbh8835h000iuy5o20lgwe59" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-搭建Python开发环境-Mac" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/13/搭建Python开发环境-Mac/" class="article-date">
+  <time datetime="2019-07-13T02:56:04.000Z" itemprop="datePublished">2019-07-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/13/搭建Python开发环境-Mac/">搭建Python开发环境(Mac)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Python官网：</p>
+<p><a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a></p>
+<p>Python官方文档：</p>
+<p><a href="https://docs.python.org/" target="_blank" rel="noopener">https://docs.python.org/</a></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>###简介</p>
+<p><a href="https://github.com/pypa/pipenv" target="_blank" rel="noopener"><code>pipenv</code></a>是<a href="https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies" target="_blank" rel="noopener">Python官方推荐</a>的包管理工具。可以说，它集成了<code>virtualenv</code>, <code>pip</code>和<code>pyenv</code>三者的功能。其目的旨在集合了所有的包管理工具的长处，如: <code>npm</code>, <code>yarn</code>, <code>composer</code>等的优点。</p>
+<p>它能够自动为项目创建和管理虚拟环境，从<code>Pipfile</code>文件添加或删除安装的包，同时生成<code>Pipfile.lock</code>来锁定安装包的版本和依赖信息，避免构建错误。</p>
+<p><code>pipenv</code>主要解决了如下问题:</p>
+<ul>
+<li>不用再单独使用<code>pip</code>和<code>virtualenv</code>, 现在它们合并在一起了</li>
+<li>不用再维护<code>requirements.txt</code>, 使用<code>Pipfile</code>和<code>Pipfile.lock</code>来代替</li>
+<li>可以使用多个python版本(<code>python2</code>和<code>python3</code>)</li>
+<li>在安装了<code>pyenv</code>的条件下，可以自动安装需要的Python版本</li>
+</ul>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p> 1、pyenv是什么？</p>
+<p>pyenv是Python版本管理工具，利用它我们可以在同一台电脑上安装多个版本的Python，这个过程非常简单。</p>
+<p>2、 pipenv是什么？</p>
+<p>pipenv是Python官方推荐的包管理工具，用来管理安装包的。类似于npm包。</p>
+<p>3、利用pipenv和pyenv管理多个相互独立的Python虚拟开发环境。</p>
+<h3 id="1-安装pyenv—用来安装多个Python版本"><a href="#1-安装pyenv—用来安装多个Python版本" class="headerlink" title="1. 安装pyenv—用来安装多个Python版本"></a>1. 安装pyenv—用来安装多个Python版本</h3><p>1.1、安装或升级pyenv<br>首先安装pyenv，如果你是Mac电脑，那么推荐使用Homebrew来安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install pyenv</span><br></pre></td></tr></table></figure>
+<p>1.2、用pyenv安装Python<br>安装完pyenv，安装Python就简单了。我电脑上系统自带的是Python2.7.10，我准备再安装一个Python2.7.14和Python3.6.4，以后开发时候就用自己安装的Python2.7.14或者Python3.6.4了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pyenv install 3.6.4 2.7.24 </span><br><span class="line">pyenv rehash</span><br></pre></td></tr></table></figure></p>
+<p>执行命令pyenv versions，如果输出结果如下，那么说明我们已经安装好了Python2.7.14和Python3.6.4：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pyenv versions</span><br><span class="line">  system</span><br><span class="line">* 2.7.14 </span><br><span class="line">* 3.6.4</span><br></pre></td></tr></table></figure></p>
+<p>现在我们就可使用Python2.7.14和Python3.6.4了。执行这个下面python2、python3、python指令可以进入到不同版本的Python环境。</p>
+<p>pyenv global属于全局切换，pyenv local属于局部切换，局部切换只在所在切换时的目录中生效。可以通过如下命令来切换版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$: pyenv global 3.6.4</span><br><span class="line">$: pyenv versions</span><br><span class="line">  system</span><br><span class="line">  2.7.14</span><br><span class="line">* 3.6.4 (set by /Users/chunming.liu/.pyenv/version)</span><br><span class="line">pyenv local 2.7.14</span><br></pre></td></tr></table></figure>
+<p><strong>重要事情说三遍</strong>：</p>
+<p>不过有了pipenv，我们不用手动切换Python版本了，也就是安装完了pyenv之后不用再去安装具体的Python版本了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意：</span><br><span class="line">add --enable-shared for pyenv python installations</span><br><span class="line">https://github.com/pyenv/pyenv/wiki#how-to-build-cpython-with---enable-shared</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装pyenv—用来安装相互独立的虚拟环境"><a href="#2-安装pyenv—用来安装相互独立的虚拟环境" class="headerlink" title="2. 安装pyenv—用来安装相互独立的虚拟环境"></a>2. 安装pyenv—用来安装相互独立的虚拟环境</h3><p>2.1、安装pipenv<br>如果你是Mac电脑，那么推荐使用Homebrew来安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install pipenv</span><br></pre></td></tr></table></figure>
+<p>执行pipenv，可以查看pipenv的帮助信息。</p>
+<p>2.2、为项目建立虚拟环境<br>默认地，虚拟环境会创建在~/.local/share/virtualenvs目录里面。<br>如果我们希望在每个项目的根目录下保存虚拟环境目录（.venv），需要在 .bashrc 或 .bash_profile 中配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PIPENV_VENV_IN_PROJECT=1</span><br></pre></td></tr></table></figure>
+<p>要想使配置生效，执行下source ~/.bashrc或者source ~/.bash_profile。</p>
+<p>接下来我们为项目创建虚拟环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir pipenv_demo</span><br><span class="line">cd pipenv_demo</span><br><span class="line"></span><br><span class="line">pipenv --three # 初始化一个python3虚拟环境</span><br><span class="line">pipenv --two # 初始化一个python3虚拟环境</span><br></pre></td></tr></table></figure>
+<p>创建完虚拟环境之后，在pipenv_demo目录下将会看到一个.venv的目录，这个目录就是pipenv_demo项目的虚拟环境。<br>使用具体的python版本创建虚拟环境，可以执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --python 2.7.14</span><br></pre></td></tr></table></figure>
+<p>2.3、为项目安装第三方依赖包<br>为项目安装自己的依赖包到虚拟环境中，使每个项目拥有相互独立的第三方包，是非常不错的Python的开发实践。安装依赖包到虚拟环境中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pipenv install flask</span><br><span class="line">pipenv install pytest --dev   # 用于区分需要部署到线上的开发包、只需要在测试环境中执行的包</span><br></pre></td></tr></table></figure></p>
+<p>执行完上面的命令后，检查一下是否安装成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ pipenv graph</span><br><span class="line">Flask==0.12.2</span><br><span class="line">  - click [required: &gt;=2.0, installed: 6.7]</span><br><span class="line">  - itsdangerous [required: &gt;=0.21, installed: 0.24]</span><br><span class="line">  - Jinja2 [required: &gt;=2.4, installed: 2.10]</span><br><span class="line">    - MarkupSafe [required: &gt;=0.23, installed: 1.0]</span><br><span class="line">  - Werkzeug [required: &gt;=0.7, installed: 0.14.1]</span><br><span class="line">pytest==3.4.2</span><br><span class="line">  - attrs [required: &gt;=17.2.0, installed: 17.4.0]</span><br><span class="line">  - pluggy [required: &gt;=0.5,&lt;0.7, installed: 0.6.0]</span><br><span class="line">  - py [required: &gt;=1.5.0, installed: 1.5.2]</span><br><span class="line">  - setuptools [required: Any, installed: 38.6.0]</span><br><span class="line">  - six [required: &gt;=1.10.0, installed: 1.11.0]</span><br></pre></td></tr></table></figure></p>
+<p>2.4 更新 pypi源来提高依赖库安装的速度<br>在使用pipenv的时候，常常会在安装的时候，一直卡在了 Locking 这里，通过加上 -v 参数，可以看到安装过程中的步骤信息，卡在了下载那里，这时应该可以意识到是因为网络的原因，pipenv创建的 Pipfile 中默认的pypi源是python官方的 <a href="https://pypi.python.org/simple。我们国内用户访问下载的时候会很慢。" target="_blank" rel="noopener">https://pypi.python.org/simple。我们国内用户访问下载的时候会很慢。</a></p>
+<p>所以，我一般会在创建好Pipfile以后，修改到文件中 source 块下的 url 字段，设置为国内的 pypi 源就好了，我推荐的是清华的pypi源或者阿里源，具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[[source]]</span><br><span class="line"> url = &quot;https://pypi.tuna.tsinghua.edu.cn/simple&quot;</span><br><span class="line"> verify_ssl = true</span><br><span class="line"> name = &quot;pypi&quot;</span><br></pre></td></tr></table></figure></p>
+<p>3、使用虚拟环境进行开发<br>虚拟环境创建好了之后，就可以在里面进行开发了。<br>如果在命令行下开发，则在项目目录下执行pipenv shell，就进入到了虚拟环境中，在这个环境中，就已经包含安装过的所有第三方依赖包了，接下来就可以利用这些第三方包进行开发工作了。<br>如果是用Pycharm进行开发，就更简单了，直接用Pycharm打开项目目录就好了，打开后可以从Pycharm中的左侧导航栏里面看到External Libraries里面显示的是虚拟环境中的Python解释器。</p>
+<p>4、删除安装的第三方包<br>如果是要删除虚拟环境中的第三方包，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv uninstall flask</span><br></pre></td></tr></table></figure></p>
+<p>5、安装项目所有的依赖<br>用git管理项目时候，要把Pipfile和Pipfile.lock加入版本跟踪。这样clone了这个项目的同学，只需要执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install</span><br></pre></td></tr></table></figure></p>
+<p>就可以安装所有的Pipfile中 [packages]部分的包了，并且自动为项目在自己电脑上创建了虚拟环境。<br>如果是想要安装[dev-packages]部分的包，需要执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install -d</span><br></pre></td></tr></table></figure></p>
+<p>上面的方法都是安装Pipfile中列出来的第三方包的最新版本，如果是想安装Pipfile.lock中固定版本的第三方依赖包，需要执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install --ignore-pipfile</span><br></pre></td></tr></table></figure></p>
+<p>如果你的项目之前使用requirements.txt来管理依赖的，那么使用pipenv安装所有依赖可以采用类似pip的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install -r path/to/requirements.txt</span><br></pre></td></tr></table></figure></p>
+<p>6、团队实践建议</p>
+<p>建议团队内开发人员，在自己电脑上都安装pyenv和pipenv。Pipfile和Pipfile.lock加入版本跟踪，.venv不要加入版本管理。为自己的每一个项目建立独立的虚拟环境。</p>
+<p>7、扩展命令（了解下就好）</p>
+<ul>
+<li>查看虚拟环境python解释器所在位置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --py</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看虚拟环境所在位置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv --venv</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用更底层的命令<code>pip freeze</code> </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv run pip freeze</span><br></pre></td></tr></table></figure>
+<ul>
+<li>只在安装开发阶段使用的软件包(和npm类似)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv install pytest --dev</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装Pipfile.lock的所有包(完整移植开发环境)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pipenv sync</span><br></pre></td></tr></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/liuchunming033/article/details/79582617" target="_blank" rel="noopener">https://blog.csdn.net/liuchunming033/article/details/79582617</a><br><a href="https://blog.windrunner.me/python/pip.html#pip-%E4%B8%8E-pipfile" target="_blank" rel="noopener">https://blog.windrunner.me/python/pip.html#pip-%E4%B8%8E-pipfile</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/07/13/搭建Python开发环境-Mac/" data-id="ckbh8836w001fuy5oumze0i9t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-antd-定制样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/07/antd-定制样式/" class="article-date">
+  <time datetime="2019-06-06T16:20:00.000Z" itemprop="datePublished">2019-06-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/07/antd-定制样式/">antd 定制样式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>less版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;less&quot;: &quot;2.7.2&quot;, less:3.0有bug</span><br></pre></td></tr></table></figure>
+<p>要编译的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// theme.less</span><br><span class="line"></span><br><span class="line">// 由于antd内部使用了utf8编码的文字符号而不是使用\u****的Unicode码点表示</span><br><span class="line">// 在cdn样式文件返回头里没有明确指明utf-8时，可能存在文字符号乱码的可能</span><br><span class="line">// 编译生成过程中通过css-loader也会自动转换，而本文场景是直接编译</span><br><span class="line">// 所以，为了安全起见，最好指定编码格式</span><br><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line"></span><br><span class="line">@import &quot;../node_modules/antd/dist/antd.less&quot;;</span><br><span class="line"></span><br><span class="line">// 覆盖变量定义</span><br><span class="line">// 所有变量详见 https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less</span><br><span class="line"></span><br><span class="line">@primary-color: #F15B41;</span><br></pre></td></tr></table></figure>
+<p>编译命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">n// theme.less</span><br><span class="line"></span><br><span class="line">// 由于antd内部使用了utf8编码的文字符号而不是使用\u****的Unicode码点表示</span><br><span class="line">// 在cdn样式文件返回头里没有明确指明utf-8时，可能存在文字符号乱码的可能</span><br><span class="line">// 编译生成过程中通过css-loader也会自动转换，而本文场景是直接编译</span><br><span class="line">// 所以，为了安全起见，最好指定编码格式</span><br><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line"></span><br><span class="line">@import &quot;../node_modules/antd/dist/antd.less&quot;;</span><br><span class="line"></span><br><span class="line">// 覆盖变量定义</span><br><span class="line">// 所有变量详见 https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less</span><br><span class="line"></span><br><span class="line">@primary-color: #F15B41;</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://juejin.im/post/59be21226fb9a00a5b1a93c7" target="_blank" rel="noopener">web局部（antd）主题方案演进</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/06/07/antd-定制样式/" data-id="ckbh88363000yuy5ouw5euaa8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Mac上传文件到Linux服务器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/17/Mac上传文件到Linux服务器/" class="article-date">
+  <time datetime="2019-04-17T11:27:17.000Z" itemprop="datePublished">2019-04-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/17/Mac上传文件到Linux服务器/">Mac上传文件到Linux服务器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h3><ol>
+<li>打开<code>终端</code>，Shell =&gt; 新建远程连接</li>
+<li><p>选择安全文件传输，输入连接主机IP</p>
+</li>
+<li><p>输入yes，然后输入主机密码，按回车结束</p>
+</li>
+<li><p>连接成功，上传文件</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">put 本地文件路径 远程主机路径</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="相关Linux命令"><a href="#相关Linux命令" class="headerlink" title="相关Linux命令"></a>相关Linux命令</h3><p>linux主机下查看文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">linux主机下查看文件</span><br><span class="line">ls -l</span><br><span class="line"> </span><br><span class="line">例子：将目录A重命名为B</span><br><span class="line">mv A B</span><br><span class="line"></span><br><span class="line">压缩文件</span><br><span class="line">zip all.zip *.jpg</span><br><span class="line"></span><br><span class="line">解压缩文件</span><br><span class="line">unzip all.zip</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/04/17/Mac上传文件到Linux服务器/" data-id="ckbh8834z0007uy5o4sqyw0j6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MongoDB笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/03/MongoDB笔记/" class="article-date">
+  <time datetime="2019-04-03T14:50:32.000Z" itemprop="datePublished">2019-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/MongoDB笔记/">MongoDB笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ol>
+<li><p>使用homebrew安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install mongodb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在当前目录下建立data/db文件夹，并设置权限可读可写</p>
+</li>
+</ol>
+<p>####启动</p>
+<p>/usr/local/Cellar/mongodb/3.4.6/bin    </p>
+<ol>
+<li>在mongodb路径(/usr/local/Cellar/mongodb/3.4.6/bin)下面，sudo mongod</li>
+<li>配置了path路径的话，直接 sudo mongod</li>
+</ol>
+<p>配置path路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果你不想每次启动mongodb都要切换到/usr/local/Cellar/mongodb/3.4.6/bin目录下，你可以将它添加到环境变量,操作如下：</span><br><span class="line">echo &apos;export PATH=/usr/local/Cellar/mongodb/3.4.6/bin:$PATH&apos;&gt;&gt;~/.bash_profile</span><br><span class="line">添加完成后为使环境变量生效，可重启shell终端，或输入命令</span><br><span class="line"></span><br><span class="line">source .bash_profile。</span><br><span class="line">查看环境变量是否添加成功：</span><br><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
+<p>参考文档：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.jianshu.com/p/c53a48cdba7f</span><br></pre></td></tr></table></figure>
+<p>###基本使用</p>
+<ol>
+<li>通过命令行进行mongoDB数据库操作</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mongo 或 mongo</span><br></pre></td></tr></table></figure>
+<p>展示数据库：show dbs<br>切换数据库：use 数据库名 例如：use user<br>展示表：show collections<br>展示整张表的信息：db.表名.find()  例如：db.user.find()<br>更新指定记录的指定值：使用$set，否则所有该字段都会被更新。<br>db.user.update({“name”:”xxx”},{$set:{“name”:”yyy”}})<br>删除记录：<br>db.user.remove({“name”:”xxx”})<br>插入数据：<br>db.users.insert({“name”:”James”}})</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/04/03/MongoDB笔记/" data-id="ckbh883500008uy5olblrr4vu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-chrome浏览器相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/25/chrome浏览器相关/" class="article-date">
+  <time datetime="2019-03-25T09:24:01.000Z" itemprop="datePublished">2019-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/25/chrome浏览器相关/">chrome浏览器相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><ol>
+<li><p>mac上设置新版chrome浏览器跨域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -n /Applications/Google\ Chrome.app/ --args --disable-web-security  --user-data-dir=/Users/yourname/MyChromeDevUserData/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>当访问URL地址的时候会出现301重定向的时候，清理掉浏览器的缓存可以解决问题。(重要重要重要)</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/03/25/chrome浏览器相关/" data-id="ckbh883670010uy5oib4zsw6s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Webpack4-0-笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/23/Webpack4-0-笔记/" class="article-date">
+  <time datetime="2019-03-23T09:58:35.000Z" itemprop="datePublished">2019-03-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/23/Webpack4-0-笔记/">Webpack4.0 笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Webpack-相关"><a href="#Webpack-相关" class="headerlink" title="Webpack 相关"></a>Webpack 相关</h2><ol>
+<li>模块打包工具</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ES Module 模块引入方式</span><br><span class="line">CommonJS 模块引入方式(node的引入规范)</span><br><span class="line">CMD</span><br><span class="line">ADM</span><br><span class="line">！！！千万不能全局安装webpack， 全局安装了某个版本的，如4.0，那其他用3.0的版本的就没法用了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 快速初始化npm项目</span><br></pre></td></tr></table></figure>
+<p>   npm init -yes<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3. 查看npm包的信息</span><br></pre></td></tr></table></figure></p>
+<p>  npm info ‘安装包的名字’  例如： npm info webpack<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. npx用来查看当前项目的node_module安装包的的命令</span><br></pre></td></tr></table></figure></p>
+<p>   npx webpack -v  </p>
+<p>   安装指定版本的npm包<br>   <a href="mailto:webpack-cli@3.3.0" target="_blank" rel="noopener">webpack-cli@3.3.0</a></p>
+<p>   webpack打包默认是使用webpack.config.js文件；<br>   如果需要指定其他的问配置文件：npx webpack –config webapckconfig.js(配置文件名)<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### Webpack 的核心概念</span><br><span class="line"></span><br><span class="line">### Webpack 的高级概念</span><br><span class="line"></span><br><span class="line">### Webpack 配置</span><br><span class="line"></span><br><span class="line">### Webpack 底层原理及脚手架工具</span><br><span class="line"></span><br><span class="line">### Create-React-App 和 Vue-Cli 3.0脚手架工具配置</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/03/23/Webpack4-0-笔记/" data-id="ckbh88360000uuy5oz4fqkfew" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo常用命令笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/20/hexo常用命令笔记/" class="article-date">
+  <time datetime="2019-03-20T13:28:36.000Z" itemprop="datePublished">2019-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/20/hexo常用命令笔记/">hexo常用命令笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="hexo常用命令笔记"><a href="#hexo常用命令笔记" class="headerlink" title="hexo常用命令笔记"></a>hexo常用命令笔记</h3><ol>
+<li>安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #安装  </span><br><span class="line">npm update hexo -g #升级  </span><br><span class="line">hexo init #初始化</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>简写</li>
+</ol>
+<p><code>hexo n &quot;我的博客&quot;</code> == <code>hexo new &quot;我的博客&quot;</code> #新建文章<br><code>hexo p</code> == <code>hexo publish</code><br><code>hexo g</code> == <code>hexo generate</code>#生成<br><code>hexo s</code> == <code>hexo server</code> #启动服务预览<br><code>hexo d</code> == <code>hexo deploy</code>#部署</p>
+<ol start="3">
+<li>服务器</li>
+</ol>
+<p><code>hexo server</code> #Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><code>hexo server -s</code> #静态模式<br><code>hexo server -p 5000</code> #更改端口<br><code>hexo server -i 192.168.1.1</code> #自定义 IP</p>
+<p><code>hexo clean</code> #清除缓存 网页正常情况下可以忽略此条命令<br><code>hexo g</code> #生成静态网页<br><code>hexo d</code> #开始部署</p>
+<p>参考链接：<a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="noopener">https://segmentfault.com/a/1190000002632530</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2019/03/20/hexo常用命令笔记/" data-id="ckbh8836c0012uy5o9hppbv0j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

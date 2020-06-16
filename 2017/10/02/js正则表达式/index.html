@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>js正则表达式 | LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等  什么是 RegExp？ RegExp 语法 概念：子表达式 概念：方括号（字符簇） 概念：元字符 概念：量词 RegExp 对象方法7.1. test()7.2. exec()7.3. compile() 支持正则表达式的 String 对象的方法8.1. search 检索与正则表达式相匹配的值。8.2. ma">
+<meta name="keywords" content="正则表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js正则表达式">
+<meta property="og:url" content="http://lucaswangdev.github.io/2017/10/02/js正则表达式/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等  什么是 RegExp？ RegExp 语法 概念：子表达式 概念：方括号（字符簇） 概念：元字符 概念：量词 RegExp 对象方法7.1. test()7.2. exec()7.3. compile() 支持正则表达式的 String 对象的方法8.1. search 检索与正则表达式相匹配的值。8.2. ma">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-01T06:08:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js正则表达式">
+<meta name="twitter:description" content="最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等  什么是 RegExp？ RegExp 语法 概念：子表达式 概念：方括号（字符簇） 概念：元字符 概念：量词 RegExp 对象方法7.1. test()7.2. exec()7.3. compile() 支持正则表达式的 String 对象的方法8.1. search 检索与正则表达式相匹配的值。8.2. ma">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/02/js正则表达式/" class="article-date">
+  <time datetime="2017-10-02T13:28:59.000Z" itemprop="datePublished">2017-10-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js正则表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等</p>
+<ol>
+<li>什么是 RegExp？</li>
+<li>RegExp 语法</li>
+<li>概念：子表达式</li>
+<li>概念：方括号（字符簇）</li>
+<li>概念：元字符</li>
+<li>概念：量词</li>
+<li>RegExp 对象方法<br>7.1. test()<br>7.2. exec()<br>7.3. compile()</li>
+<li>支持正则表达式的 String 对象的方法<br>8.1. search 检索与正则表达式相匹配的值。<br>8.2. match 找到一个或多个正则表达式的匹配。<br>8.3. replace 替换与正则表达式匹配的子串。<br>8.4. split 把字符串分割为字符串数组。<br>8.4.1. 经验：</li>
+<li>常见的 正则表达式 校验<br>9.1. 一、校验数字的表达式<br>9.2. 二、校验字符的表达式<br>9.3. 三、特殊需求表达式<br>最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等</li>
+</ol>
+<p>2017-05-31 12448<br>什么是 RegExp？</p>
+<p>RegExp 是正则表达式（Regular expression）的缩写，作用是对字符串执行模式匹配。</p>
+<p>通常用于格式验证、正则替换、查找子串等</p>
+<p>各种编程语言的正则表达式基本相同，不同的语言可能会有一些细小的差别</p>
+<p>RegExp入门：<a href="http://www.w3school.com.cn/js/js_obj_regexp.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/js/js_obj_regexp.asp</a></p>
+<p>完整的 RegExp 对象参考手册：<a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp</a></p>
+<p>PHP 正则表达式：<a href="http://www.imooc.com/learn/350" target="_blank" rel="noopener">http://www.imooc.com/learn/350</a></p>
+<p>javascript 正则表达式：<a href="http://www.imooc.com/learn/706" target="_blank" rel="noopener">http://www.imooc.com/learn/706</a></p>
+<p>Python 正则表达式：<a href="http://www.imooc.com/learn/550" target="_blank" rel="noopener">http://www.imooc.com/learn/550</a></p>
+<p>RegExp 语法</p>
+<p>// 直接实例化<br>var reg = new RegExp(pattern [, flags]);<br>// 隐式创建(推荐)<br>var reg = /pattern/flags;<br>参数 pattern 是一个字符串，指定了正则表达式的模式或其他正则表达式。</p>
+<p>参数 [, flags] 是一个可选的字符串，包含属性 “g”（global ）、”i” （ignoreCase）和 “m”（multiline）。</p>
+<p>ECMAScript 标准化之前，不支持 m 属性。如果 pattern 是正则表达式，而不是字符串，则必须省略该参数。</p>
+<p>概念：子表达式</p>
+<p>在正则表达式中，使用括号括起来的内容是一个子表达式，子表达式匹配到的内容会被系统捕获至缓冲区，使用\n（n：数字）来反向引用系统的第n号缓冲区的内容。</p>
+<p>场景：后面的内容要求与前面的一致，可以使用子表达式</p>
+<p>// 查找连续相同的四个数字<br>var str = “1212ab45677778cd”;<br>var reg = /(\d)\1\1\1/gi;<br>console.log(str.match(reg));<br>// OUTPUT:7777<br>概念：方括号（字符簇）</p>
+<p>var str = “Is this all there is?”;<br>var patt1 = /[a-h]/g;<br>document.write(str.match(patt1));<br>// OUTPUT:h,a,h,e,e<br>方括号    作用<br>[abc]    查找方括号之间的任何字符。<br>[^abc]    查找任何不在方括号之间的字符。<br>[0-9]    查找任何从 0 至 9 的数字。同 \d<br>[a-z]    查找任何从小写 a 到小写 z 的字符。<br>[A-Z]    查找任何从大写 A 到大写 Z 的字符。<br>[A-z]    查找任何从大写 A 到小写 z 的字符。<br>[0-9a-zA-Z]    查找0-9,a-z,A-Z<br>概念：元字符</p>
+<p>元字符（Metacharacter）是拥有特殊含义的字符：<br>元字符 | 作用<br>—|—<br>\ | 转义符 （、）、/、\<br>| | 选择匹配符，可以匹配多个规则<br>. | 查找单个字符，除了换行和行结束符。<br>\w | 查找单词字符。字符 ( 字母 ，数字，下划线_ )<br>\W | 查找非单词字符。<br>\d | 查找数字。<br>\D | 查找非数字字符。<br>\s | 查找空白字符。空格<br>\S | 查找非空白字符。<br>\b | 匹配单词边界。<br>\B | 匹配非单词边界。<br>\0 | 查找 NUL 字符。<br>\n | 查找换行符。<br>\f | 查找换页符。<br>\r | 查找回车符。<br>\t | 查找制表符。<br>\v | 查找垂直制表符。<br>\xxx | 查找以八进制数 xxx 规定的字符。<br>\xdd | 查找以十六进制数 dd 规定的字符。<br>\uxxxx | 查找以十六进制数 xxxx 规定的 Unicode 字符。</p>
+<p>概念：量词</p>
+<p>量词    作用<br>n+    匹配任何包含至少一个 n 的字符串。同 {1,}<br>n*    匹配任何包含零个或多个 n 的字符串。同 {0,}<br>n?    匹配任何包含零个或一个 n 的字符串。同 {0,1}<br>n{X}    匹配包含 X 个 n 的序列的字符串。<br>n{X,Y}    匹配包含 X 至 Y 个 n 的序列的字符串。<br>n{X,}    匹配包含至少 X 个 n 的序列的字符串。<br>n$    匹配任何结尾为 n 的字符串。<br>^n    匹配任何开头为 n 的字符串。注意 /[^a] / 和 /^ [a]/是不一样的，前者是排除的，后者是代表首位。<br>(?=n)    匹配任何其后紧接指定字符串 n 的字符串。正向预查<br>(?!n)    匹配任何其后没有紧接指定字符串 n 的字符串。反向预查<br>RegExp 对象方法</p>
+<p>test()</p>
+<p>test() 方法检索字符串中是否存在指定的值。返回值是 true 或 false。</p>
+<p>var patt1 = new RegExp(‘e’);<br>console.log(patt1.test(‘some text’));<br>// OUTPUT:true<br>var patt2 = new RegExp(‘ee’);<br>console.log(patt2.test(‘some text’));<br>// OUTPUT:false</p>
+<p>// 判断是不是QQ号<br>// 1 首位不能是0  ^[1-9]<br>// 2 必须是 [5, 11] 位的数字 \d{4, 9}<br>var str = ‘80583600’;<br>var regexp = /^[1-9][0-9]{4,10}$/gim;<br>if (regexp.test(str)) {<br>    alert(‘is’);<br>} else {<br>    alert(‘no’);<br>}<br>exec()</p>
+<p>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。</p>
+<p>var patt1 = new RegExp(‘e’);<br>console.log(patt1.exec(‘some text’));<br>// OUTPUT:e<br>var patt2 = new RegExp(‘ee’);<br>console.log(patt2.exec(‘some text’));<br>// OUTPUT:null<br>compile()</p>
+<p>compile() 既可以改变检索模式，也可以添加或删除第二个参数。</p>
+<p>var patt1=new RegExp(“e”);<br>document.write(patt1.test(“The best things in life are free”)); // true<br>// 改变了检索模式<br>patt1.compile(“eee”);<br>document.write(patt1.test(“The best things in life are free”)); // false<br>支持正则表达式的 String 对象的方法</p>
+<p>search 检索与正则表达式相匹配的值。</p>
+<p>var str = “Visit W3School!”<br>console.log(str.search(/W3School/))<br>// OUTPUT:6<br>match 找到一个或多个正则表达式的匹配。</p>
+<p>var str=”1 plus 2 equal 3”<br>console.log(str.match(/\d+/g))<br>// OUTPUT:1,2,3<br>replace 替换与正则表达式匹配的子串。</p>
+<p>var str = “Visit Microsoft!”<br>console.log(str.replace(/Microsoft/, “W3School”));<br>// OUTPUT:Visit W3School!</p>
+<p>// 找重复项最多的字符个数<br>var str = ‘g21ss4aeba_ersb43sgnnsssstht6sss60snnsj8resw0_ss’;<br>// split : 将字符串转化为数组<br>// sort : 对数组排序，ASCII<br>// join : 将数组转化为字符串<br>var str_new = str.split(‘’).sort().join(‘’);<br>document.write(str + ‘<br>‘);<br>document.write(str.split(‘’) + ‘<br>‘);<br>document.write(str.split(‘’).sort() + ‘<br>‘);<br>document.write(str.split(‘’).sort().join(‘’) + ‘<br>‘);<br>// 匹配字符，且重复这个字符，重复次数至少一次。<br>var regexp = /(\w)\1+/g;<br>var index = 0;<br>var value = ‘’;<br>str_new.replace(regexp, function($0, $1) {<br>    // document.write($0);<br>    // document.write($1);<br>    if (index &lt; $0.length) {<br>        index = $0.length;<br>        value = $1;<br>    }<br>});<br>document.write(‘重复项最多的字符是：’ + value + ‘，个数是：’ + index);<br>// OUTPUT:<br>// 0012344668__aabbeeegghjnnnnrrssssssssssssssssttw<br>// 重复项最多的字符是：s，个数是：16<br>split 把字符串分割为字符串数组。</p>
+<p>var str = “How are you doing today?”<br>document.write(str.split(/\s+/));<br>// OUTPUT:How,are,you,doing,today?<br>经验：</p>
+<p>检验格式（邮箱格式、IP格式）是否正确，用test()<br>抓取星期（如所有手机号），用exec()、match()<br>替换敏感词汇，用replace()<br>常见的 正则表达式 校验</p>
+<p>// 常见的 正则表达式 校验<br>// QQ号、手机号、Email、是否是数字、去掉前后空格、是否存在中文、邮编、身份证、URL、日期格式、IP<br>var myRegExp = {<br>    // 检查字符串是否为合法QQ号码<br>    isQQ: function(str) {<br>        // 1 首位不能是0  ^[1-9]<br>        // 2 必须是 [5, 11] 位的数字  \d{4, 9}<br>        var reg = /^[1-9][0-9]{4,9}$/gim;<br>        if (reg.test(str)) {<br>            console.log(‘QQ号码格式输入正确’);<br>            return true;<br>        } else {<br>            console.log(‘请输入正确格式的QQ号码’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法手机号码<br>    isPhone: function(str) {<br>        var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|18[0-9]|14[57]|17[678])[0-9]{8}$/;<br>        if (reg.test(str)) {<br>            console.log(‘手机号码格式输入正确’);<br>            return true;<br>        } else {<br>            console.log(‘请输入正确格式的手机号码’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法Email地址<br>    isEmail: function(str) {<br>        var reg = /^\w+((-\w+)|(.\w+))<em>\@[A-Za-z0-9]+((.|-)[A-Za-z0-9]+)</em>.[A-Za-z0-9]+$/;<br>        // var reg = /\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)<em>/;<br>        if (reg.test(str)) {<br>            console.log(‘Email格式输入正确’);<br>            return true;<br>        } else {<br>            console.log(‘请输入正确格式的Email’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否是数字<br>    isNumber: function(str) {<br>        var reg = /^\d+$/;<br>        if (reg.test(str)) {<br>            console.log(str + ‘是数字’);<br>            return true;<br>        } else {<br>            console.log(str + ‘不是数字’);<br>            return false;<br>        }<br>    },<br>    // 去掉前后空格<br>    trim: function(str) {<br>        var reg = /^\s+|\s+$/g;<br>        return str.replace(reg, ‘’);<br>    },<br>    // 检查字符串是否存在中文<br>    isChinese: function(str) {<br>        var reg = /[\u4e00-\u9fa5]/gm;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 中存在中文’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 中不存在中文’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法邮政编码<br>    isPostcode: function(str) {<br>        // 起始数字不能为0，然后是5个数字  [1-9]\d{5}<br>        var reg = /^[1-9]\d{5}$/g;<br>        // var reg = /^[1-9]\d{5}(?!\d)$/;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 是合法的邮编格式’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 是不合法的邮编格式’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法身份证号码<br>    isIDcard: function(str) {<br>        var reg = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 是合法的身份证号码’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 是不合法的身份证号码’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法URL<br>    isURL: function(str) {<br>        var reg = /^https?:\/\/(([a-zA-Z0-9_-])+(.)?)</em>(:\d+)?(\/((.)?(\?)?=?&amp;?<a href="\?">a-zA-Z0-9_-</a>?)<em>)</em>$/i;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 是合法的URL’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 是不合法的URL’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法日期格式 yyyy-mm-dd<br>    isDate: function(str) {<br>        var reg = /^[1-2][0-9][0-9][0-9]-[0-1]{0,1}[0-9]-[0-3]{0,1}[0-9]$/;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 是合法的日期格式’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 是不合法的日期格式，yyyy-mm-dd’);<br>            return false;<br>        }<br>    },<br>    // 检查字符串是否为合法IP地址<br>    isIP: function(str) {<br>        // 1.1.1.1  四段  [0 , 255]<br>        // 第一段不能为0<br>        // 每个段不能以0开头<br>        //<br>        // 本机IP: 58.50.120.18 湖北省荆州市 电信<br>        var reg = /^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$/gi;<br>        if (reg.test(str)) {<br>            console.log(str + ‘ 是合法的IP地址’);<br>            return true;<br>        } else {<br>            console.log(str + ‘ 是不合法的IP地址’);<br>            return false;<br>        }<br>    }<br>}<br>// 测试<br>// console.log(myRegExp.isQQ(‘80583600’));<br>// console.log(myRegExp.isPhone(‘17607160722’));<br>// console.log(myRegExp.isEmail(<a href="mailto:&#39;80583600@qq.com" target="_blank" rel="noopener">&#39;80583600@qq.com</a>‘));<br>// console.log(myRegExp.isNumber(‘100a’));<br>// console.log(myRegExp.trim(‘  100  ‘));<br>// console.log(myRegExp.isChinese(‘baixiaoming’));<br>// console.log(myRegExp.isChinese(‘小明’));<br>// console.log(myRegExp.isPostcode(‘412345’));<br>// console.log(myRegExp.isIDcard(‘42091119940927001X’));<br>// console.log(myRegExp.isURL(‘<a href="https://www.baidu.com/&#39;))" target="_blank" rel="noopener">https://www.baidu.com/&#39;))</a>;<br>// console.log(myRegExp.isDate(‘2017-4-4’));<br>// console.log(myRegExp.isIP(‘1.0.0.0’));<br>一、校验数字的表达式</p>
+<p>数字：^[0-9]<em>$<br>n位的数字：^\d{n}$<br>至少n位的数字：^\d{n,}$<br>m-n位的数字：^\d{m,n}$<br>零和非零开头的数字：^(0|[1-9][0-9]</em>)$<br>非零开头的最多带两位小数的数字：^([1-9][0-9]<em>)+(.[0-9]{1,2})?$<br>带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$<br>正数、负数、和小数：^(-|+)?\d+(.\d+)?$<br>有两位小数的正实数：^[0-9]+(.[0-9]{2})?$<br>有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$<br>非零的正整数：^[1-9]\d</em>$ 或 ^([1-9][0-9]<em>){1,3}$ 或 ^+?[1-9][0-9]</em>$<br>非零的负整数：^-[1-9][]0-9”<em>$ 或 ^-[1-9]\d</em>$<br>非负整数：^\d+$ 或 ^[1-9]\d<em>|0$<br>非正整数：^-[1-9]\d</em>|0$ 或 ^((-\d+)|(0+))$<br>非负浮点数：^\d+(.\d+)?$ 或 ^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0$<br>非正浮点数：^((-\d+(.\d+)?)|(0+(.0+)?))$ 或 ^(-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>))|0?.0+|0$<br>正浮点数：^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>$ 或 ^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))$<br>负浮点数：^-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>)$ 或 ^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))$<br>浮点数：^(-?\d+)(.\d+)?$ 或 ^-?([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0)$<br>二、校验字符的表达式</p>
+<p>汉字：^[\u4e00-\u9fa5]{0,}$<br>英文和数字：^[A-Za-z0-9]+$ 或 ^[A-Za-z0-9]{4,40}$<br>长度为3-20的所有字符：^.{3,20}$<br>由26个英文字母组成的字符串：^[A-Za-z]+$<br>由26个大写英文字母组成的字符串：^[A-Z]+$<br>由26个小写英文字母组成的字符串：^[a-z]+$<br>由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$<br>由数字、26个英文字母或者下划线组成的字符串：^\w+$ 或 ^\w{3,20}$<br>中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$<br>可以输入含有^%&amp;’,;=?$\”等字符：[^%&amp;’,;=?$\x22]+<br>禁止输入含有~的字符：[^~\x22]+<br>三、特殊需求表达式</p>
+<p>Email地址：^\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)<em>$<br>域名：[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?<br>InternetURL：[a-zA-z]+://[^\s]</em> 或 ^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]<em>)?$<br>手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$<br>电话号码(“XXX-XXXXXXX”、”XXXX-XXXXXXXX”、”XXX-XXXXXXX”、”XXX-XXXXXXXX”、”XXXXXXX”和”XXXXXXXX)：^((\d{3,4}-)|\d{3.4}-)?\d{7,8}$<br>国内电话号码(0511-4405222、021-87888822)：\d{3}-\d{8}|\d{4}-\d{7}<br>身份证号(15位、18位数字)：^\d{15}|\d{18}$<br>短身份证号码(数字、字母x结尾)：^([0-9]){7,18}(x|X)?$ 或 ^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$<br>帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<br>密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w{5,17}$<br>强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.</em>\d)(?=.<em>[a-z])(?=.</em>[A-Z]).{8,10}$<br>日期格式：^\d{4}-\d{1,2}-\d{1,2}<br>一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$<br>一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$<br>xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+\.[x|X][m|M][l|L]$<br>中文字符的正则表达式：[\u4e00-\u9fa5]<br>双字节字符：[^\x00-\xff]    (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))<br>空白行的正则表达式：\n\s<em>\r    (可以用来删除空白行)<br>HTML标记的正则表达式：&lt;(\S</em>?)[^&gt;]<em>&gt;.</em>?&lt;/\1&gt;|&lt;.<em>? /&gt;    (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)<br>首尾空白字符的正则表达式：^\s</em>|\s<em>$或(^\s</em>)|(\s<em>$)    (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)<br>腾讯QQ号：[1-9][0-9]{4,}    (腾讯QQ号从10000开始)<br>中国邮政编码：[1-9]\d{5}(?!\d)    (中国邮政编码为6位数字)<br>IP地址：\d+.\d+.\d+.\d+    (提取IP地址时有用)<br>IP地址：((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d?\d))<br>钱的输入格式：<br>1.有四种钱的表示形式我们可以接受:”10000.00” 和 “10,000.00”, 和没有 “分” 的 “10000” 和 “10,000”：^[1-9][0-9]</em>$<br>2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符”0”不通过,所以我们采用下面的形式：^(0|[1-9][0-9]<em>)$<br>3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?[1-9][0-9]</em>)$<br>4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$<br>5.必须说明的是,小数点后面至少应该有1位数,所以”10.”是不通过的,但是 “10” 和 “10.2” 是通过的：^[0-9]+(.[0-9]{2})?$<br>6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]{1,2})?$<br>7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]{1,3}(,[0-9]{3})<em>(.[0-9]{1,2})?$<br>8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]{1,3}(,[0-9]{3})</em>)(.[0-9]{1,2})?$<br>备注：这就是最终结果了,别忘了”+”可以用”*”替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里<br>最后更新时间：2017-05-31 11:36:01 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2017/10/02/js正则表达式/" data-id="ckbh8838s002juy5o4dkdawyp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/12/thinkphp5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          thinkphp5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/30/JavaScript笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

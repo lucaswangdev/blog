@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>thinkphp5 | LucasWang&#39;s Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="快速开始1234567891011121314151617181920### thinkphp环境搭建​``` bash1. 安装XAMPP2. 启动，检查端口是否被占用，被占用的话结束其他应用 netstat -ano   //Windows环境下查看端口3. /mysql/bin/目录下    mysql -uroot -p  //查看mysql是否安装成功 php目录，php -v 查看是P">
+<meta name="keywords" content="thinkphp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="thinkphp5">
+<meta property="og:url" content="http://lucaswangdev.github.io/2018/09/12/thinkphp5/index.html">
+<meta property="og:site_name" content="LucasWang&#39;s Notes">
+<meta property="og:description" content="快速开始1234567891011121314151617181920### thinkphp环境搭建​``` bash1. 安装XAMPP2. 启动，检查端口是否被占用，被占用的话结束其他应用 netstat -ano   //Windows环境下查看端口3. /mysql/bin/目录下    mysql -uroot -p  //查看mysql是否安装成功 php目录，php -v 查看是P">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-05T15:09:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="thinkphp5">
+<meta name="twitter:description" content="快速开始1234567891011121314151617181920### thinkphp环境搭建​``` bash1. 安装XAMPP2. 启动，检查端口是否被占用，被占用的话结束其他应用 netstat -ano   //Windows环境下查看端口3. /mysql/bin/目录下    mysql -uroot -p  //查看mysql是否安装成功 php目录，php -v 查看是P">
+  
+    <link rel="alternate" href="/atom.xml" title="LucasWang&#39;s Notes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LucasWang&#39;s Notes</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lucaswangdev.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-thinkphp5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/12/thinkphp5/" class="article-date">
+  <time datetime="2018-09-12T05:43:15.000Z" itemprop="datePublished">2018-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      thinkphp5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">### thinkphp环境搭建</span><br><span class="line">​``` bash</span><br><span class="line">1. 安装XAMPP</span><br><span class="line">2. 启动，检查端口是否被占用，被占用的话结束其他应用</span><br><span class="line"> netstat -ano   //Windows环境下查看端口</span><br><span class="line">3. /mysql/bin/目录下    mysql -uroot -p  //查看mysql是否安装成功 php目录，php -v 查看是PHP是否成功。</span><br><span class="line">4. [ 下载应用项目](https://github.com/top-think/think.git)</span><br><span class="line">5. [ 下载核心类库](https://github.com/top-think/framework.git)</span><br><span class="line">6. 上面两个文件解压，拷贝到XAMPP根目录下的htdocs,应用项目重命名zerg,核心类重命名thinkphp,把thinkphp剪切到zerg.</span><br><span class="line">7. 浏览器http://localhost/zerg/public/ 显示成功界面，环境搭建成功。</span><br><span class="line"></span><br><span class="line">安装Xdebug，打开php.ini配置文件，在最下面加入最后一行。</span><br><span class="line">[Xdebug]</span><br><span class="line">zend_extension = C:\server\xampp\php\php_xdebug-2.5.4-5.6-vc11.dll</span><br><span class="line">xdebug.remote_enable=1</span><br><span class="line">xdebug.remote_port=9000</span><br><span class="line">xdebug.remote_host= localhost</span><br><span class="line">xdebug.idekey = PHPSTORM</span><br><span class="line">xdebug.profiler_enable=1</span><br><span class="line">xdebug.profiler_output_dir=&quot; C:\server\xampp\php\xdebug_log&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line">配置虚拟主机</span><br><span class="line">C:\server\xampp\apache\conf\extra</span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot <span class="string">"C:\server\xampp\htdocs"</span></span><br><span class="line">	ServerName localhost</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot <span class="string">"C:\server\xampp\htdocs\zerg\public"</span></span><br><span class="line">	ServerName z.com</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line">更改host文件</span><br><span class="line">C:\Windows\System32\drivers\etc</span><br><span class="line"><span class="comment"># localhost name resolution is handled within DNS itself.</span></span><br><span class="line"><span class="comment">#	127.0.0.1       localhost</span></span><br><span class="line">	127.0.0.1       z.com</span><br><span class="line"><span class="comment">###路由模块</span></span><br><span class="line"></span><br><span class="line">//Route::rule(<span class="string">'路由表达式'</span>,<span class="string">'路由地址'</span>,<span class="string">'请求类型'</span>,<span class="string">'路由参数(数组)'</span>,<span class="string">'变量规则(数组)'</span>);</span><br><span class="line">//Route::rule(<span class="string">'hello'</span>,<span class="string">'sample/Test/hello'</span>,<span class="string">'GET'</span>,[<span class="string">'https'</span>=&gt;<span class="literal">true</span> ]);</span><br><span class="line">//Route::get(<span class="string">'hello'</span>,<span class="string">'sample/Test/hello'</span>);</span><br><span class="line">1. 特别注意，方法一旦注册路由，原来的path路径方法自动失效。！！！！！！！！！！！！</span><br><span class="line"></span><br><span class="line"><span class="comment">### 传递参数</span></span><br><span class="line">路由里面传递参数：使用“：参数名称”   ？name=<span class="string">"zhangshan"</span>&amp;age=18</span><br><span class="line">Route::post(<span class="string">'hello/:id'</span>,<span class="string">'sample/Test/hello'</span>);</span><br><span class="line"><span class="comment">### 获取参数</span></span><br><span class="line">1. 方式一：</span><br><span class="line">    public <span class="keyword">function</span> hello(<span class="variable">$id</span>, <span class="variable">$name</span>,<span class="variable">$age</span>)&#123;</span><br><span class="line">       <span class="built_in">echo</span> <span class="variable">$id</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'|'</span>;</span><br><span class="line">       <span class="built_in">echo</span> <span class="variable">$name</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'|'</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$age</span>;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">"hello qiniujljljlj"</span>;</span><br><span class="line">   &#125;</span><br><span class="line">2. 方式二：</span><br><span class="line">首先，导入包；</span><br><span class="line">use think\Request;</span><br><span class="line">param跟请求方式无关，都能获取到</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">        <span class="variable">$id</span> = Request::instance()-&gt;param(<span class="string">'id'</span>);</span><br><span class="line">        <span class="variable">$name</span> = Request::instance()-&gt;param(<span class="string">'name'</span>);</span><br><span class="line">        <span class="variable">$age</span> = Request::instance()-&gt;param(<span class="string">'age'</span>);</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$id</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'|'</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$name</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">'|'</span>;</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$age</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">获取所有参数一：</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">        <span class="variable">$all</span> = Request::instance()-&gt;param();</span><br><span class="line">		//<span class="variable">$all</span> = Request::instance()-&gt;get(); 获取get传参数</span><br><span class="line">		//<span class="variable">$all</span> = Request::instance()-&gt;post(); 获取post传参</span><br><span class="line">		//<span class="variable">$all</span> = Request::instance()-&gt;route(); 获取路由传参</span><br><span class="line">		var_dump(<span class="variable">$all</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">获取所有参数二（通过input助手函数）</span><br><span class="line">    public <span class="keyword">function</span> <span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">        <span class="variable">$all</span> = input(<span class="string">'param.'</span>);</span><br><span class="line">        var_dump(<span class="variable">$all</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">获取所有参数三（通过依赖注入的方法）</span><br><span class="line">    public <span class="keyword">function</span> hello(Request <span class="variable">$request</span>)&#123;</span><br><span class="line">        <span class="variable">$all</span> = <span class="variable">$request</span>-&gt;param(<span class="string">''</span>);</span><br><span class="line">        var_dump(<span class="variable">$all</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">### 验证方式</span></span><br><span class="line"> <span class="variable">$data</span> = [</span><br><span class="line">//            <span class="string">'name'</span> =&gt; <span class="string">'vendor'</span>,</span><br><span class="line">//            <span class="string">'email'</span> =&gt; <span class="string">'vendor@qq.com'</span>,</span><br><span class="line">//            <span class="string">'id'</span> =&gt; <span class="variable">$id</span></span><br><span class="line">//        ];</span><br><span class="line">        //独立验证方式</span><br><span class="line">//        <span class="variable">$validate</span> = new Validate([</span><br><span class="line">//            <span class="string">'name'</span> =&gt; <span class="string">'require|max:10'</span>,</span><br><span class="line">//            <span class="string">'email'</span> =&gt; <span class="string">'email'</span></span><br><span class="line">//        ]);</span><br><span class="line"></span><br><span class="line">        // 验证器方式(封装性更好些，推荐使用)</span><br><span class="line">//        <span class="variable">$validate</span> = new IDMustBePostiveInt();</span><br><span class="line"></span><br><span class="line">//        <span class="variable">$result</span> = <span class="variable">$validate</span>-&gt;batch()-&gt;check(<span class="variable">$data</span>);</span><br><span class="line">//        <span class="built_in">echo</span>  <span class="variable">$validate</span>-&gt;getError();</span><br><span class="line">//        <span class="keyword">if</span>(<span class="variable">$result</span>)&#123;</span><br><span class="line">//</span><br><span class="line">//        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">//            <span class="built_in">return</span> <span class="string">'id必须是正整数1111'</span>;</span><br><span class="line">//        &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lucaswangdev.github.io/2018/09/12/thinkphp5/" data-id="ckbh8836q001auy5o82x98m3v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thinkphp/">thinkphp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/05/链接整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          链接
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/10/02/js正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js正则表达式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECMAScript6/">ECMAScript6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Egret/">Egret</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Server/">Server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pomelo/">pomelo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servser/">servser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/url链接/">url链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vscode/">vscode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ECMAScript6/" style="font-size: 10px;">ECMAScript6</a> <a href="/tags/Egret/" style="font-size: 10px;">Egret</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Nodejs/" style="font-size: 13.33px;">Nodejs</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SSH/" style="font-size: 13.33px;">SSH</a> <a href="/tags/Server/" style="font-size: 10px;">Server</a> <a href="/tags/SpringBoot/" style="font-size: 10px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/pomelo/" style="font-size: 10px;">pomelo</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/servser/" style="font-size: 10px;">servser</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/url链接/" style="font-size: 10px;">url链接</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/VsCode插件配置/">VsCode插件配置</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/20/面向对象-B5/">面向对象-B5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/数组-B4/">数组-B4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/18/流程控制-B3/">流程控制-B3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/08/Java基本语法-B2/">Java基本语法-B2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Lucas Wang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
